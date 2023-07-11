@@ -1,0 +1,614 @@
+fileFormatVersion: 2
+guid: 6852fa01a761ad242b387e3d33b372dd
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: -8983684200615198757
+    second: UPDOWN|Take 001_LEFTARM_LEFT_A
+  - first:
+      74: -7892895038234024458
+    second: UPDOWN|Take 001_LEFTARM_LEFT_B
+  - first:
+      74: 3177596659128702834
+    second: UPDOWN|Take 001_LEFTARM_LEFT_C
+  - first:
+      74: -7804846925250146723
+    second: UPDOWN|Take 001_LEFTARM_RIGHT_A
+  - first:
+      74: 7191328808967465005
+    second: UPDOWN|Take 001_LEFTARM_RIGHT_B
+  - first:
+      74: -7298862459331138946
+    second: UPDOWN|Take 001_LEFTARM_RIGHT_C
+  - first:
+      74: 1598129910115793628
+    second: UPDOWN|Take 001_RIGHTARM_LEFT_A
+  - first:
+      74: -3464809380891569075
+    second: UPDOWN|Take 001_RIGHTARM_LEFT_B
+  - first:
+      74: -6606902437636905758
+    second: UPDOWN|Take 001_RIGHTARM_LEFT_C
+  - first:
+      74: 1313072592127045567
+    second: UPDOWN|Take 001_RIGHTARM_RIGHT_A
+  - first:
+      74: 5120641115351268825
+    second: UPDOWN|Take 001_RIGHTARM_RIGHT_B
+  - first:
+      74: -8838642480123686526
+    second: UPDOWN|Take 001_RIGHTARM_RIGHT_C
+  - first:
+      74: -6091977014304709354
+    second: UPDOWN|Take 001_UPDOWN
+  - first:
+      74: -5361314685223523179
+    second: LEFTARM_LEFT_A|Take 001_LEFTARM_LEFT_A
+  - first:
+      74: -7140952484018374606
+    second: LEFTARM_LEFT_A|Take 001_LEFTARM_LEFT_B
+  - first:
+      74: -7565811659366430848
+    second: LEFTARM_LEFT_A|Take 001_LEFTARM_LEFT_C
+  - first:
+      74: 2575132230566521368
+    second: LEFTARM_LEFT_A|Take 001_LEFTARM_RIGHT_A
+  - first:
+      74: -9205302110239430150
+    second: LEFTARM_LEFT_A|Take 001_LEFTARM_RIGHT_B
+  - first:
+      74: 4054643041039664307
+    second: LEFTARM_LEFT_A|Take 001_LEFTARM_RIGHT_C
+  - first:
+      74: 8698064493035926215
+    second: LEFTARM_LEFT_A|Take 001_RIGHTARM_LEFT_A
+  - first:
+      74: -6795951814958985090
+    second: LEFTARM_LEFT_A|Take 001_RIGHTARM_LEFT_B
+  - first:
+      74: 7900702182436567845
+    second: LEFTARM_LEFT_A|Take 001_RIGHTARM_LEFT_C
+  - first:
+      74: 102322731218606614
+    second: LEFTARM_LEFT_A|Take 001_RIGHTARM_RIGHT_A
+  - first:
+      74: 7756512367590558609
+    second: LEFTARM_LEFT_A|Take 001_RIGHTARM_RIGHT_B
+  - first:
+      74: -1079686094881242635
+    second: LEFTARM_LEFT_A|Take 001_RIGHTARM_RIGHT_C
+  - first:
+      74: -9156654463549229238
+    second: LEFTARM_LEFT_A|Take 001_UPDOWN
+  - first:
+      74: -3799071475819199208
+    second: LEFTARM_LEFT_B|Take 001_LEFTARM_LEFT_A
+  - first:
+      74: -5641010370893992416
+    second: LEFTARM_LEFT_B|Take 001_LEFTARM_LEFT_B
+  - first:
+      74: -8497589002281759471
+    second: LEFTARM_LEFT_B|Take 001_LEFTARM_LEFT_C
+  - first:
+      74: -2532547991698491239
+    second: LEFTARM_LEFT_B|Take 001_LEFTARM_RIGHT_A
+  - first:
+      74: -3229474970973942813
+    second: LEFTARM_LEFT_B|Take 001_LEFTARM_RIGHT_B
+  - first:
+      74: -7915416334850590841
+    second: LEFTARM_LEFT_B|Take 001_LEFTARM_RIGHT_C
+  - first:
+      74: -1165444391074027433
+    second: LEFTARM_LEFT_B|Take 001_RIGHTARM_LEFT_A
+  - first:
+      74: -2606570219365853130
+    second: LEFTARM_LEFT_B|Take 001_RIGHTARM_LEFT_B
+  - first:
+      74: -3496031136138094797
+    second: LEFTARM_LEFT_B|Take 001_RIGHTARM_LEFT_C
+  - first:
+      74: -7862934864450384677
+    second: LEFTARM_LEFT_B|Take 001_RIGHTARM_RIGHT_A
+  - first:
+      74: 4810523929689826909
+    second: LEFTARM_LEFT_B|Take 001_RIGHTARM_RIGHT_B
+  - first:
+      74: -5167079214403039282
+    second: LEFTARM_LEFT_B|Take 001_RIGHTARM_RIGHT_C
+  - first:
+      74: 5660742178364575437
+    second: LEFTARM_LEFT_B|Take 001_UPDOWN
+  - first:
+      74: 4862370802980358847
+    second: LEFTARM_LEFT_C|Take 001_LEFTARM_LEFT_A
+  - first:
+      74: -6693861231792600692
+    second: LEFTARM_LEFT_C|Take 001_LEFTARM_LEFT_B
+  - first:
+      74: -4332722756350347189
+    second: LEFTARM_LEFT_C|Take 001_LEFTARM_LEFT_C
+  - first:
+      74: 154999756824974769
+    second: LEFTARM_LEFT_C|Take 001_LEFTARM_RIGHT_A
+  - first:
+      74: 1722562078054094386
+    second: LEFTARM_LEFT_C|Take 001_LEFTARM_RIGHT_B
+  - first:
+      74: -4319289784242529720
+    second: LEFTARM_LEFT_C|Take 001_LEFTARM_RIGHT_C
+  - first:
+      74: 6720832868427147787
+    second: LEFTARM_LEFT_C|Take 001_RIGHTARM_LEFT_A
+  - first:
+      74: 3393881628650933911
+    second: LEFTARM_LEFT_C|Take 001_RIGHTARM_LEFT_B
+  - first:
+      74: 8511210258029389877
+    second: LEFTARM_LEFT_C|Take 001_RIGHTARM_LEFT_C
+  - first:
+      74: -2124299829344330586
+    second: LEFTARM_LEFT_C|Take 001_RIGHTARM_RIGHT_A
+  - first:
+      74: -464854874774877709
+    second: LEFTARM_LEFT_C|Take 001_RIGHTARM_RIGHT_B
+  - first:
+      74: 6170708398720230078
+    second: LEFTARM_LEFT_C|Take 001_RIGHTARM_RIGHT_C
+  - first:
+      74: -5536850474767809669
+    second: LEFTARM_LEFT_C|Take 001_UPDOWN
+  - first:
+      74: 7214605670080162454
+    second: LEFTARM_RIGHT_A|Take 001_LEFTARM_LEFT_A
+  - first:
+      74: -865097085193501994
+    second: LEFTARM_RIGHT_A|Take 001_LEFTARM_LEFT_B
+  - first:
+      74: 8060293406516089753
+    second: LEFTARM_RIGHT_A|Take 001_LEFTARM_LEFT_C
+  - first:
+      74: -4872113587460281613
+    second: LEFTARM_RIGHT_A|Take 001_LEFTARM_RIGHT_A
+  - first:
+      74: -8326738362577698088
+    second: LEFTARM_RIGHT_A|Take 001_LEFTARM_RIGHT_B
+  - first:
+      74: 4758941166234193310
+    second: LEFTARM_RIGHT_A|Take 001_LEFTARM_RIGHT_C
+  - first:
+      74: 8863397137987266232
+    second: LEFTARM_RIGHT_A|Take 001_RIGHTARM_LEFT_A
+  - first:
+      74: -7574780054097315699
+    second: LEFTARM_RIGHT_A|Take 001_RIGHTARM_LEFT_B
+  - first:
+      74: -3217834210856608156
+    second: LEFTARM_RIGHT_A|Take 001_RIGHTARM_LEFT_C
+  - first:
+      74: 2494183682584864253
+    second: LEFTARM_RIGHT_A|Take 001_RIGHTARM_RIGHT_A
+  - first:
+      74: 7944275470459070188
+    second: LEFTARM_RIGHT_A|Take 001_RIGHTARM_RIGHT_B
+  - first:
+      74: -709441350243479442
+    second: LEFTARM_RIGHT_A|Take 001_RIGHTARM_RIGHT_C
+  - first:
+      74: -4501757176780458659
+    second: LEFTARM_RIGHT_A|Take 001_UPDOWN
+  - first:
+      74: -4803808484707591215
+    second: LEFTARM_RIGHT_B|Take 001_LEFTARM_LEFT_A
+  - first:
+      74: 8269890020430142849
+    second: LEFTARM_RIGHT_B|Take 001_LEFTARM_LEFT_B
+  - first:
+      74: -4713082093280588746
+    second: LEFTARM_RIGHT_B|Take 001_LEFTARM_LEFT_C
+  - first:
+      74: -2073721840608694785
+    second: LEFTARM_RIGHT_B|Take 001_LEFTARM_RIGHT_A
+  - first:
+      74: 7224156142642492729
+    second: LEFTARM_RIGHT_B|Take 001_LEFTARM_RIGHT_B
+  - first:
+      74: -8991027948950774254
+    second: LEFTARM_RIGHT_B|Take 001_LEFTARM_RIGHT_C
+  - first:
+      74: -3617802710276131072
+    second: LEFTARM_RIGHT_B|Take 001_RIGHTARM_LEFT_A
+  - first:
+      74: 8829801265427982402
+    second: LEFTARM_RIGHT_B|Take 001_RIGHTARM_LEFT_B
+  - first:
+      74: -2354453920692710441
+    second: LEFTARM_RIGHT_B|Take 001_RIGHTARM_LEFT_C
+  - first:
+      74: 7049151288973461883
+    second: LEFTARM_RIGHT_B|Take 001_RIGHTARM_RIGHT_A
+  - first:
+      74: 2938773677448319795
+    second: LEFTARM_RIGHT_B|Take 001_RIGHTARM_RIGHT_B
+  - first:
+      74: 4373840195066312732
+    second: LEFTARM_RIGHT_B|Take 001_RIGHTARM_RIGHT_C
+  - first:
+      74: -877863157813939834
+    second: LEFTARM_RIGHT_B|Take 001_UPDOWN
+  - first:
+      74: -3094936364888534145
+    second: LEFTARM_RIGHT_C|Take 001_LEFTARM_LEFT_A
+  - first:
+      74: 5455180363474858556
+    second: LEFTARM_RIGHT_C|Take 001_LEFTARM_LEFT_B
+  - first:
+      74: 5594475364359323559
+    second: LEFTARM_RIGHT_C|Take 001_LEFTARM_LEFT_C
+  - first:
+      74: -6378121797930643910
+    second: LEFTARM_RIGHT_C|Take 001_LEFTARM_RIGHT_A
+  - first:
+      74: 840033174604456029
+    second: LEFTARM_RIGHT_C|Take 001_LEFTARM_RIGHT_B
+  - first:
+      74: 1685621717452122626
+    second: LEFTARM_RIGHT_C|Take 001_LEFTARM_RIGHT_C
+  - first:
+      74: -9019389330175130301
+    second: LEFTARM_RIGHT_C|Take 001_RIGHTARM_LEFT_A
+  - first:
+      74: 6638721815617178049
+    second: LEFTARM_RIGHT_C|Take 001_RIGHTARM_LEFT_B
+  - first:
+      74: 1857277800025439380
+    second: LEFTARM_RIGHT_C|Take 001_RIGHTARM_LEFT_C
+  - first:
+      74: 1271197832222809589
+    second: LEFTARM_RIGHT_C|Take 001_RIGHTARM_RIGHT_A
+  - first:
+      74: -732182823453041219
+    second: LEFTARM_RIGHT_C|Take 001_RIGHTARM_RIGHT_B
+  - first:
+      74: 996969038216672020
+    second: LEFTARM_RIGHT_C|Take 001_RIGHTARM_RIGHT_C
+  - first:
+      74: -844966148275885648
+    second: LEFTARM_RIGHT_C|Take 001_UPDOWN
+  - first:
+      74: 2141822469212943835
+    second: RIGHTARM_LEFT_A|Take 001_LEFTARM_LEFT_A
+  - first:
+      74: 3491600988178847481
+    second: RIGHTARM_LEFT_A|Take 001_LEFTARM_LEFT_B
+  - first:
+      74: -5174008119876107651
+    second: RIGHTARM_LEFT_A|Take 001_LEFTARM_LEFT_C
+  - first:
+      74: -4719229269079164384
+    second: RIGHTARM_LEFT_A|Take 001_LEFTARM_RIGHT_A
+  - first:
+      74: -3802085802343434332
+    second: RIGHTARM_LEFT_A|Take 001_LEFTARM_RIGHT_B
+  - first:
+      74: 7324737102183132592
+    second: RIGHTARM_LEFT_A|Take 001_LEFTARM_RIGHT_C
+  - first:
+      74: 746627544941140989
+    second: RIGHTARM_LEFT_A|Take 001_RIGHTARM_LEFT_A
+  - first:
+      74: 7308963706857744162
+    second: RIGHTARM_LEFT_A|Take 001_RIGHTARM_LEFT_B
+  - first:
+      74: -5078341729818439508
+    second: RIGHTARM_LEFT_A|Take 001_RIGHTARM_LEFT_C
+  - first:
+      74: -5939966859501708081
+    second: RIGHTARM_LEFT_A|Take 001_RIGHTARM_RIGHT_A
+  - first:
+      74: -6912069084094902386
+    second: RIGHTARM_LEFT_A|Take 001_RIGHTARM_RIGHT_B
+  - first:
+      74: -2795349587606438704
+    second: RIGHTARM_LEFT_A|Take 001_RIGHTARM_RIGHT_C
+  - first:
+      74: 2419536058422766349
+    second: RIGHTARM_LEFT_A|Take 001_UPDOWN
+  - first:
+      74: 2821536462290253578
+    second: RIGHTARM_LEFT_B|Take 001_LEFTARM_LEFT_A
+  - first:
+      74: -2261688904146615954
+    second: RIGHTARM_LEFT_B|Take 001_LEFTARM_LEFT_B
+  - first:
+      74: -8800662043053737136
+    second: RIGHTARM_LEFT_B|Take 001_LEFTARM_LEFT_C
+  - first:
+      74: -3785853497059432601
+    second: RIGHTARM_LEFT_B|Take 001_LEFTARM_RIGHT_A
+  - first:
+      74: 1642474752659186380
+    second: RIGHTARM_LEFT_B|Take 001_LEFTARM_RIGHT_B
+  - first:
+      74: 6004214250291745610
+    second: RIGHTARM_LEFT_B|Take 001_LEFTARM_RIGHT_C
+  - first:
+      74: 981381354521377237
+    second: RIGHTARM_LEFT_B|Take 001_RIGHTARM_LEFT_A
+  - first:
+      74: 1852074408140039211
+    second: RIGHTARM_LEFT_B|Take 001_RIGHTARM_LEFT_B
+  - first:
+      74: -6620855423460833853
+    second: RIGHTARM_LEFT_B|Take 001_RIGHTARM_LEFT_C
+  - first:
+      74: 6629195833704338487
+    second: RIGHTARM_LEFT_B|Take 001_RIGHTARM_RIGHT_A
+  - first:
+      74: 1954903401196052503
+    second: RIGHTARM_LEFT_B|Take 001_RIGHTARM_RIGHT_B
+  - first:
+      74: -3607172534393624405
+    second: RIGHTARM_LEFT_B|Take 001_RIGHTARM_RIGHT_C
+  - first:
+      74: 532479068351543842
+    second: RIGHTARM_LEFT_B|Take 001_UPDOWN
+  - first:
+      74: 8524889877944375063
+    second: RIGHTARM_LEFT_C|Take 001_LEFTARM_LEFT_A
+  - first:
+      74: 6343118746879590964
+    second: RIGHTARM_LEFT_C|Take 001_LEFTARM_LEFT_B
+  - first:
+      74: -2154550556681551917
+    second: RIGHTARM_LEFT_C|Take 001_LEFTARM_LEFT_C
+  - first:
+      74: 5253485418227876172
+    second: RIGHTARM_LEFT_C|Take 001_LEFTARM_RIGHT_A
+  - first:
+      74: -2694699932302526864
+    second: RIGHTARM_LEFT_C|Take 001_LEFTARM_RIGHT_B
+  - first:
+      74: -86621567622112706
+    second: RIGHTARM_LEFT_C|Take 001_LEFTARM_RIGHT_C
+  - first:
+      74: 2210568031162097698
+    second: RIGHTARM_LEFT_C|Take 001_RIGHTARM_LEFT_A
+  - first:
+      74: 5331562761739793660
+    second: RIGHTARM_LEFT_C|Take 001_RIGHTARM_LEFT_B
+  - first:
+      74: -7174865413222951797
+    second: RIGHTARM_LEFT_C|Take 001_RIGHTARM_LEFT_C
+  - first:
+      74: 4869502376758573586
+    second: RIGHTARM_LEFT_C|Take 001_RIGHTARM_RIGHT_A
+  - first:
+      74: 7427966704873038383
+    second: RIGHTARM_LEFT_C|Take 001_RIGHTARM_RIGHT_B
+  - first:
+      74: 7693402004442709750
+    second: RIGHTARM_LEFT_C|Take 001_RIGHTARM_RIGHT_C
+  - first:
+      74: -5602617129501051
+    second: RIGHTARM_LEFT_C|Take 001_UPDOWN
+  - first:
+      74: -4714236861579514831
+    second: RIGHTARM_RIGHT_A|Take 001_LEFTARM_LEFT_A
+  - first:
+      74: -1612723191069847281
+    second: RIGHTARM_RIGHT_A|Take 001_LEFTARM_LEFT_B
+  - first:
+      74: 6443099208301335501
+    second: RIGHTARM_RIGHT_A|Take 001_LEFTARM_LEFT_C
+  - first:
+      74: -482552951041298907
+    second: RIGHTARM_RIGHT_A|Take 001_LEFTARM_RIGHT_A
+  - first:
+      74: -7934912348486114229
+    second: RIGHTARM_RIGHT_A|Take 001_LEFTARM_RIGHT_B
+  - first:
+      74: -223789776754552409
+    second: RIGHTARM_RIGHT_A|Take 001_LEFTARM_RIGHT_C
+  - first:
+      74: 2267618168056773313
+    second: RIGHTARM_RIGHT_A|Take 001_RIGHTARM_LEFT_A
+  - first:
+      74: -6183838060308026858
+    second: RIGHTARM_RIGHT_A|Take 001_RIGHTARM_LEFT_B
+  - first:
+      74: 5323045280218775600
+    second: RIGHTARM_RIGHT_A|Take 001_RIGHTARM_LEFT_C
+  - first:
+      74: -4584414529990420946
+    second: RIGHTARM_RIGHT_A|Take 001_RIGHTARM_RIGHT_A
+  - first:
+      74: -8417093919469105050
+    second: RIGHTARM_RIGHT_A|Take 001_RIGHTARM_RIGHT_B
+  - first:
+      74: 6926990146262123359
+    second: RIGHTARM_RIGHT_A|Take 001_RIGHTARM_RIGHT_C
+  - first:
+      74: -7308241945605563966
+    second: RIGHTARM_RIGHT_A|Take 001_UPDOWN
+  - first:
+      74: -6014727663295941483
+    second: RIGHTARM_RIGHT_B|Take 001_LEFTARM_LEFT_A
+  - first:
+      74: -6984531850063994987
+    second: RIGHTARM_RIGHT_B|Take 001_LEFTARM_LEFT_B
+  - first:
+      74: 3504080656010827410
+    second: RIGHTARM_RIGHT_B|Take 001_LEFTARM_LEFT_C
+  - first:
+      74: 2046524481248694771
+    second: RIGHTARM_RIGHT_B|Take 001_LEFTARM_RIGHT_A
+  - first:
+      74: -6102310314432196220
+    second: RIGHTARM_RIGHT_B|Take 001_LEFTARM_RIGHT_B
+  - first:
+      74: 4648057779333311220
+    second: RIGHTARM_RIGHT_B|Take 001_LEFTARM_RIGHT_C
+  - first:
+      74: 4388613773033075008
+    second: RIGHTARM_RIGHT_B|Take 001_RIGHTARM_LEFT_A
+  - first:
+      74: 8687892485009010458
+    second: RIGHTARM_RIGHT_B|Take 001_RIGHTARM_LEFT_B
+  - first:
+      74: -6236491294784759920
+    second: RIGHTARM_RIGHT_B|Take 001_RIGHTARM_LEFT_C
+  - first:
+      74: 1097936123759349884
+    second: RIGHTARM_RIGHT_B|Take 001_RIGHTARM_RIGHT_A
+  - first:
+      74: -9164380823589767880
+    second: RIGHTARM_RIGHT_B|Take 001_RIGHTARM_RIGHT_B
+  - first:
+      74: 6145017614689385536
+    second: RIGHTARM_RIGHT_B|Take 001_RIGHTARM_RIGHT_C
+  - first:
+      74: -7364627228879171603
+    second: RIGHTARM_RIGHT_B|Take 001_UPDOWN
+  - first:
+      74: -1844314542171080085
+    second: RIGHTARM_RIGHT_C|Take 001_LEFTARM_LEFT_A
+  - first:
+      74: -6254515512122080468
+    second: RIGHTARM_RIGHT_C|Take 001_LEFTARM_LEFT_B
+  - first:
+      74: 4075773703258765438
+    second: RIGHTARM_RIGHT_C|Take 001_LEFTARM_LEFT_C
+  - first:
+      74: -1810737425717473309
+    second: RIGHTARM_RIGHT_C|Take 001_LEFTARM_RIGHT_A
+  - first:
+      74: -8002910691220913901
+    second: RIGHTARM_RIGHT_C|Take 001_LEFTARM_RIGHT_B
+  - first:
+      74: -5159393036001372299
+    second: RIGHTARM_RIGHT_C|Take 001_LEFTARM_RIGHT_C
+  - first:
+      74: -7052309650381261370
+    second: RIGHTARM_RIGHT_C|Take 001_RIGHTARM_LEFT_A
+  - first:
+      74: 6661527866952186818
+    second: RIGHTARM_RIGHT_C|Take 001_RIGHTARM_LEFT_B
+  - first:
+      74: -3900659230795514447
+    second: RIGHTARM_RIGHT_C|Take 001_RIGHTARM_LEFT_C
+  - first:
+      74: -340983125140629690
+    second: RIGHTARM_RIGHT_C|Take 001_RIGHTARM_RIGHT_A
+  - first:
+      74: -8814750212762618018
+    second: RIGHTARM_RIGHT_C|Take 001_RIGHTARM_RIGHT_B
+  - first:
+      74: 2662647613409297946
+    second: RIGHTARM_RIGHT_C|Take 001_RIGHTARM_RIGHT_C
+  - first:
+      74: 5901916784226909522
+    second: RIGHTARM_RIGHT_C|Take 001_UPDOWN
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Elevator
+    second: {fileID: 2100000, guid: e7bee2a65a871dc48bf6a12f625fa121, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
