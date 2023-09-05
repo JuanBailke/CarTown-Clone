@@ -14,21 +14,28 @@ public class Grid : MonoBehaviour
     private float calc;
     private Ray camRay;
     private Vector3 point, cordPoint;
-    private float rot;
+    [SerializeField] private float rot;
     private Renderer render;
-
-    [SerializeField] 
-    private GameObject canvas;
+    [SerializeField] private GameObject canvas;
     static private Transform trSelect = null;
     public bool selected = false;
 
 
     void Start()
     {
-        rot = transform.rotation.y;
+        transform.Rotate(new Vector3(0, rot, 0));
+        //rot = transform.rotation.y;
         render = GetComponent<Renderer>();
-
         canvas.SetActive(false);
+
+        if (GameManager.inst.create)
+        {
+            //Vector3 scale = new Vector3(0.5f, 1f, 0.5f);
+            selected = true;
+            trSelect = transform;
+            canvas.SetActive(true);
+            GameManager.inst.create = false;
+        }
     }
 
     void Update()
