@@ -7,16 +7,15 @@ public class Destino : MonoBehaviour
 {
 
     public NavMeshAgent agent;
-    public Transform alvo;
-    // Start is called before the first frame update
+    public Transform destiny;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        agent.SetDestination(destiny.position);
     }
 }

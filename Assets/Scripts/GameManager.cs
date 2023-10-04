@@ -14,8 +14,6 @@ public class GameManager : MonoBehaviour
     public GameObject panelItems;
     public GameObject main;
     public Text coinTxt;
-    public Text coinTxtCarShop;
-    public Text coinTxtItemShop;
     public Text levelTxt;
     public Transform garage;
     public GameObject btnShop;
@@ -28,11 +26,11 @@ public class GameManager : MonoBehaviour
     public Button buttonCarBuy;
     public Button buttonItemBuy;
     public GameObject panel;
-    private GameObject copy;
+    private Transform objInst;
 
     //Variáveis de Gameplay
     private int coin, valueTrade;
-    private GameObject copyObject;
+    private Transform copyObject;
     public bool create;
 
     // Start is called before the first frame update
@@ -74,7 +72,7 @@ public class GameManager : MonoBehaviour
 
     public void CreateObjectInScene()
     {
-        GameObject objInst = Instantiate(copyObject, new Vector3(-20, 0.1f, -20), Quaternion.Euler(0, 270, 0), garage);
+        objInst = Instantiate(copyObject, new Vector3(-20, 0.1f, -20), Quaternion.Euler(0, 0, 0), garage);
         create = true;
         panelShop.SetActive(false);
         panelCars.SetActive(false);
@@ -103,7 +101,7 @@ public class GameManager : MonoBehaviour
 
     public void CreateItemInScene()
     {
-        GameObject objInst = Instantiate(copyObject, new Vector3(-20, 0.1f, -20), Quaternion.Euler(-180, 0, 0), garage);
+        objInst = Instantiate(copyObject, new Vector3(-20, 0.1f, -20), Quaternion.Euler(0, 0, 0), garage);
         create = true;
         panelShop.SetActive(false);
         panelItems.SetActive(false);
@@ -118,8 +116,6 @@ public class GameManager : MonoBehaviour
     {
         panelShop.SetActive(true);
         main.SetActive(false);
-        coinTxtCarShop.text = coinTxt.text;
-        coinTxtItemShop.text = coinTxt.text;
     }
 
     public void CloseShop()

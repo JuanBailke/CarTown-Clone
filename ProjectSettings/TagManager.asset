@@ -6,11 +6,13 @@ TagManager:
   tags:
   - cena
   - fora
+  - Oficina
+  - Bloqueio
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - "Constru\xE7\xE3o"
   - Water
   - UI
   - 

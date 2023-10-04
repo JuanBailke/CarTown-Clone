@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class Grid : MonoBehaviour
 {
+    //Variáveis de cálculos e movimentação
     public float grid = 1;
     private float x = 0;
     private float y = 0;
@@ -15,33 +16,40 @@ public class Grid : MonoBehaviour
     private Ray camRay;
     private Vector3 point, cordPoint;
     [SerializeField] private float rot;
-    private Renderer render;
-    [SerializeField] private GameObject canvas;
+    [SerializeField] private GameObject canvasMovimento;
+    [SerializeField] private GameObject canvasCriacao;
     static private Transform trSelect = null;
     public bool selected = false;
+    public Color[] colors = new Color[2];
+    public Vector3 posInicial;
+    private bool liberaObj;
+    public LayerMask layerMask;
+    public BoxCollider colisorCaixa;
+    public bool colisao;
+
 
 
     void Start()
     {
         transform.Rotate(new Vector3(0, rot, 0));
-        //rot = transform.rotation.y;
-        render = GetComponent<Renderer>();
-        canvas.SetActive(false);
+        canvasMovimento.SetActive(false);
 
         if (GameManager.inst.create)
         {
-            //Vector3 scale = new Vector3(0.5f, 1f, 0.5f);
+            canvasCriacao.SetActive(true);
             selected = true;
             trSelect = transform;
-            canvas.SetActive(true);
+            canvasMovimento.SetActive(true);
+            colisorCaixa.enabled = false;
+            liberaObj = false;
             GameManager.inst.create = false;
         }
     }
 
     void Update()
     {
-
-        if (grid > 0) //Comando que faz a movimentação em grid, utilizando apenas números inteiros
+        //Comando que faz a movimentação em grid, utilizando apenas números inteiros
+        if (grid > 0)
         {
             float recalc = 1f / grid;
 
@@ -51,32 +59,59 @@ public class Grid : MonoBehaviour
             transform.position = new Vector3(x, transform.position.y, y);
         }
 
+        //Retira seleção
         if (selected && transform != trSelect)
         {
             selected = false;
-            canvas.SetActive(false);
+            canvasMovimento.SetActive(false);
         }
-
-        if (selected)
+        
+        /*if (selected)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 transform.Rotate(new Vector3(0, rot - 90, 0));
             }
-        }
+        }*/
 
+        AjusteAlturaSelecao();
         RetiraSelecao();
 
     }
 
-
-    private void OnMouseDown() //Ativa o canvas com os botões
+    private void FixedUpdate()
     {
-        movePlane = new Plane(Camera.main.transform.forward.normalized, transform.position);
+        Colisoes();
+    }
 
-        selected = true;
-        trSelect = transform;
-        canvas.SetActive(true);
+    private void Colisoes()
+    {
+        if (selected)
+        {
+            colisao = Physics.CheckBox(new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), new Vector3(2.5f, 0.3f, 2.5f), Quaternion.identity, layerMask, QueryTriggerInteraction.UseGlobal);
+            if (colisao)
+            {
+                Debug.Log("Colidiu");
+                GetComponent<Renderer>().material.color = colors[2];
+            }
+            else
+            {
+                GetComponent<Renderer>().material.color = colors[1];
+                Debug.Log("Sem colisão");
+            }
+        }
+        else
+        {
+            GetComponent<Renderer>().material.color = colors[0];
+        }
+    }
+    
+    private void AjusteAlturaSelecao()
+    {
+        if (selected)
+            transform.position = new Vector3(transform.position.x, 0.02f, transform.position.z);
+        else
+            transform.position = new Vector3(transform.position.x, 0.01f, transform.position.z);
     }
 
     private void OnMouseDrag() //Corrige a movimentação para cima e para baixo
@@ -99,6 +134,17 @@ public class Grid : MonoBehaviour
                 transform.position = cordPoint;
             }
         }
+    }
+
+    #region Configurações dos botões de UI
+
+    private void OnMouseDown() //Ativa o canvasMovimento com os botões
+    {
+        movePlane = new Plane(Camera.main.transform.forward.normalized, transform.position);
+        selected = true;
+        colisorCaixa.enabled = false;
+        trSelect = transform;
+        canvasMovimento.SetActive(true);
     }
 
     public void MovimentoZ(string dir)
@@ -136,53 +182,100 @@ public class Grid : MonoBehaviour
 
         transform.position = cordPoint;
     }
-    /*
-    private void OnMouseOver()
+
+    public void MovimentoRot(Transform obj)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            transform.Rotate(new Vector3(0, rot - 90, 0));
-        }
-    }
-    */
-    private void OnTriggerEnter(Collider col)
-    {
-        if (col.gameObject.CompareTag("cena"))
-        {
-            render.material.color = Color.red;
-            print("colidiu");
-        }
+        obj.transform.Rotate(new Vector3(0, rot + 90, 0));
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("cena"))
-        {
-            render.material.color = Color.white;
-        }
-    }
+    #endregion
 
     private void RetiraSelecao()
     {
-        if(EventSystem.current.currentSelectedGameObject == null)
+        if (liberaObj)
         {
+            /*if (EventSystem.current.currentSelectedGameObject == null)
+            {*/
 
 
-            if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(0))
+                {
+                    RaycastHit hit;
+                    Ray rayVar = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                    if (Physics.Raycast(rayVar, out hit))
+                    {
+                        if (!hit.transform.CompareTag("cena"))
+                        {
+                            /*trSelect = null;
+                            canvasMovimento.SetActive(false);
+                            selected = false;*/
+                            DesligaSelecao();
+                        }
+                    }
+                }
+            //}
+        }
+        else
+        {
+            if (Input.GetMouseButtonDown(0) && !SobreUI())
             {
                 RaycastHit hit;
                 Ray rayVar = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-                if(Physics.Raycast(rayVar, out hit))
+                if (Physics.Raycast(rayVar, out hit))
                 {
-                    if (hit.transform.CompareTag("fora"))
+                    if (!hit.transform.CompareTag("cena"))
                     {
-                        trSelect = null;
-                        canvas.SetActive(false);
-                        selected = false;
+                        DeletaObj(gameObject);
                     }
                 }
             }
         }
+        
+    }
+
+    private bool SobreUI()
+    {
+        return EventSystem.current.IsPointerOverGameObject();
+    }
+
+    public void DesligaSelecao()
+    {
+        if (!liberaObj)
+        {
+            if (colisao)
+                return;
+            else
+                liberaObj = true;
+        }
+        if (liberaObj)
+        {
+            if (colisao)
+            {
+                transform.position = posInicial;
+                canvasCriacao.SetActive(false);
+                trSelect = null;
+                canvasMovimento.SetActive(false);
+                selected = false;
+                GetComponent<Renderer>().material.color = colors[0];
+                colisorCaixa.enabled = true;
+            }
+            else
+            {
+                posInicial = transform.position;
+                canvasCriacao.SetActive(false);
+                trSelect = null;
+                canvasMovimento.SetActive(false);
+                selected = false;
+                GetComponent<Renderer>().material.color = colors[0];
+                colisorCaixa.enabled = true;
+            }
+        }
+    }
+
+    public void DeletaObj(GameObject obj)
+    {
+        Destroy(obj);
     }
 }

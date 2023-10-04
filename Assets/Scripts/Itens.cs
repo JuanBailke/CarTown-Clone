@@ -7,5 +7,5 @@ public class Itens : MonoBehaviour
     public int itemId;
     public string itemNome;
     public int itemValue;
-    public GameObject itemObject;
+    public Transform itemObject;
 }

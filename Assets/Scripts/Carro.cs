@@ -7,5 +7,5 @@ public class Carro : MonoBehaviour
     public int carId;
     public string carNome;
     public int carValue;
-    public GameObject carObject;
+    public Transform carObject;
 }
