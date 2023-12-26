@@ -4,8 +4,19 @@ using UnityEngine;
 
 public class Itens : MonoBehaviour
 {
-    public int itemId;
-    public string itemNome;
-    public int itemValue;
-    public Transform itemObject;
+    //Variáveis compartilhadas
+    [SerializeField] private int id;
+    [SerializeField] private string name;
+    [SerializeField] private int value;
+    [SerializeField] private int saleValue;
+    [SerializeField] private Transform item;
+    //Variáveis de elevador
+    private bool liberated;
+
+    public int Id { get => id; }
+    public string Name { get => name; }
+    public int Value { get => value; }
+    public int SaleValue { get => saleValue; }
+    public Transform Item { get => item; }
+    public bool Liberated { get => liberated; }
 }

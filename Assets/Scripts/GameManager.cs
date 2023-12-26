@@ -9,29 +9,29 @@ public class GameManager : MonoBehaviour
     public static GameManager inst;
 
     [Header("Canvas HUD")]
-    public GameObject panelShop;
-    public GameObject panelCars;
-    public GameObject panelItems;
-    public GameObject main;
-    public Text coinTxt;
-    public Text levelTxt;
-    public Transform garage;
-    public GameObject btnShop;
+    [SerializeField] private GameObject panelShop;
+    [SerializeField] private GameObject panelCars;
+    [SerializeField] private GameObject panelItems;
+    [SerializeField] private GameObject main;
+    [SerializeField] private Transform garage;
+    [SerializeField] private GameObject btnShop;
 
     [Header("Canvas Loja")]
-    public Text nameCar;
-    public Text valueCar;
-    public Text nameItem;
-    public Text valueItem;
-    public Button buttonCarBuy;
-    public Button buttonItemBuy;
-    public GameObject panel;
+    [SerializeField] private Text nameCar;
+    [SerializeField] private Text valueCar;
+    [SerializeField] private Text nameItem;
+    [SerializeField] private Text valueItem;
+    [SerializeField] private Button buttonCarBuy;
+    [SerializeField] private Button buttonItemBuy;
+    [SerializeField] private GameObject panel;
+    [SerializeField] private Jogador jogador;
     private Transform objInst;
 
     //Variáveis de Gameplay
     private int coin, valueTrade;
     private Transform copyObject;
     public bool create;
+    public static bool itemSelecionado = false;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
         panelCars.SetActive(false);
         panelItems.SetActive(false);
 
-        coin = int.Parse(coinTxt.text);
+        //coin = int.Parse(coinTxt.text);
     }
 
     // Update is called once per frame
@@ -54,15 +54,15 @@ public class GameManager : MonoBehaviour
         coin += qtd;
     }
 
-    public void CallShop(Carro car)
+    public void CallShop(Itens item)
     {
-        nameCar.text = car.carNome;
-        valueCar.text = "Valor: " + car.carValue;
-        copyObject = car.carObject;
-        if (coin >= car.carValue)
+        nameCar.text = item.Name;
+        valueCar.text = "Valor: " + item.Value;
+        copyObject = item.Item;
+        if (jogador.Money >= item.Value)
         {
             buttonCarBuy.enabled = true;
-            valueTrade = car.carValue;
+            valueTrade = item.Value;
         }
         else
         {
@@ -77,21 +77,20 @@ public class GameManager : MonoBehaviour
         panelShop.SetActive(false);
         panelCars.SetActive(false);
         main.SetActive(true);
-        coin -= valueTrade;
-        coinTxt.text = coin.ToString();
+        jogador.Purchase(valueTrade);
         nameCar.text = "Selecione um item";
         valueCar.text = "";
     }
 
-    public void CallShop(Itens item)
+    public void CallShopItem(Itens item)
     {
-        nameItem.text = item.itemNome;
-        valueItem.text = "Valor: " + item.itemValue;
-        copyObject = item.itemObject;
-        if (coin >= item.itemValue)
+        nameItem.text = item.Name;
+        valueItem.text = "Valor: " + item.Value;
+        copyObject = item.Item;
+        if (jogador.Money >= item.Value)
         {
             buttonItemBuy.enabled = true;
-            valueTrade = item.itemValue;
+            valueTrade = item.Value;
         }
         else
         {
@@ -106,8 +105,8 @@ public class GameManager : MonoBehaviour
         panelShop.SetActive(false);
         panelItems.SetActive(false);
         main.SetActive(true);
-        coin -= valueTrade;
-        coinTxt.text = coin.ToString();
+        Serviços.AdicionaNaLista(copyObject);
+        jogador.Purchase(valueTrade);
         nameItem.text = "Selecione um item";
         valueItem.text = "";
     }
@@ -116,12 +115,14 @@ public class GameManager : MonoBehaviour
     {
         panelShop.SetActive(true);
         main.SetActive(false);
+        itemSelecionado = true;
     }
 
     public void CloseShop()
     {
         panelShop.SetActive(false);
         main.SetActive(true);
+        itemSelecionado = false;
     }
 
     public void OpenShopCars()

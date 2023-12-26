@@ -5,32 +5,36 @@ using UnityEngine.EventSystems;
 
 public class Grid : MonoBehaviour
 {
-    //Variáveis de cálculos e movimentação
+    [Header("Variáveis de cálculos e movimentação")]
     public float grid = 1;
+    [SerializeField] private float rot;
+    [SerializeField] private GameObject canvasMovimento;
+    [SerializeField] private GameObject canvasCriacao;
+    [SerializeField] private bool selected = false;
+    [SerializeField] private Color[] colors;
+    [SerializeField] private LayerMask layerMask;
+    [SerializeField] private BoxCollider colisorCaixa;
+    [SerializeField] private bool colisao;
+    [SerializeField] private float fixdist = 0F;
     private float x = 0;
     private float y = 0;
     private Plane movePlane;
-    [SerializeField] private float fixdist = 0F;
     private float hitdist;
     private float calc;
     private Ray camRay;
     private Vector3 point, cordPoint;
-    [SerializeField] private float rot;
-    [SerializeField] private GameObject canvasMovimento;
-    [SerializeField] private GameObject canvasCriacao;
     static private Transform trSelect = null;
-    public bool selected = false;
-    public Color[] colors = new Color[2];
-    public Vector3 posInicial;
+    private Vector3 posInicial;
     private bool liberaObj;
-    public LayerMask layerMask;
-    public BoxCollider colisorCaixa;
-    public bool colisao;
-
+    private bool auxCriação = true;
+    private int valueTrade;
+    private Jogador jogador;
 
 
     void Start()
     {
+        GameObject Player = GameObject.Find("Player");
+        jogador = Player.GetComponent<Jogador>();
         transform.Rotate(new Vector3(0, rot, 0));
         canvasMovimento.SetActive(false);
 
@@ -65,18 +69,24 @@ public class Grid : MonoBehaviour
             selected = false;
             canvasMovimento.SetActive(false);
         }
-        
-        /*if (selected)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                transform.Rotate(new Vector3(0, rot - 90, 0));
-            }
-        }*/
 
         AjusteAlturaSelecao();
-        RetiraSelecao();
+        if(gameObject.tag == "cena")
+            RetiraSelecao();
+        if (gameObject.tag == "Elevador")
+            RetiraSelecaoElevador();
+    }
 
+    void ControleDeSelecao()
+    {
+        if (selected)
+        {
+            GameManager.itemSelecionado = true;
+        }
+        else
+        {
+            GameManager.itemSelecionado = false;
+        }
     }
 
     private void FixedUpdate()
@@ -84,25 +94,25 @@ public class Grid : MonoBehaviour
         Colisoes();
     }
 
+    //Validação de colisões
     private void Colisoes()
     {
         if (selected)
         {
-            colisao = Physics.CheckBox(new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), new Vector3(2.5f, 0.3f, 2.5f), Quaternion.identity, layerMask, QueryTriggerInteraction.UseGlobal);
+            colisao = Physics.CheckBox(new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), 
+                new Vector3(2.5f, 0.3f, 2.5f), Quaternion.identity, layerMask, QueryTriggerInteraction.UseGlobal);
             if (colisao)
             {
-                Debug.Log("Colidiu");
-                GetComponent<Renderer>().material.color = colors[2];
+                GetComponent<Renderer>().material.color = colors[2]; //Vermelho
             }
             else
             {
-                GetComponent<Renderer>().material.color = colors[1];
-                Debug.Log("Sem colisão");
+                GetComponent<Renderer>().material.color = colors[1]; //Verde
             }
         }
         else
         {
-            GetComponent<Renderer>().material.color = colors[0];
+            GetComponent<Renderer>().material.color = colors[0]; //Retira Cor
         }
     }
     
@@ -145,6 +155,7 @@ public class Grid : MonoBehaviour
         colisorCaixa.enabled = false;
         trSelect = transform;
         canvasMovimento.SetActive(true);
+        GameManager.itemSelecionado = true;
     }
 
     public void MovimentoZ(string dir)
@@ -194,8 +205,8 @@ public class Grid : MonoBehaviour
     {
         if (liberaObj)
         {
-            /*if (EventSystem.current.currentSelectedGameObject == null)
-            {*/
+            if (EventSystem.current.currentSelectedGameObject == null)
+            {
 
 
                 if (Input.GetMouseButtonDown(0))
@@ -205,16 +216,17 @@ public class Grid : MonoBehaviour
 
                     if (Physics.Raycast(rayVar, out hit))
                     {
-                        if (!hit.transform.CompareTag("cena"))
+                        if (!hit.transform.CompareTag("cena") && !hit.transform.CompareTag("Elevador"))
                         {
                             /*trSelect = null;
                             canvasMovimento.SetActive(false);
                             selected = false;*/
                             DesligaSelecao();
+                            GameManager.itemSelecionado = false;
                         }
                     }
                 }
-            //}
+            }
         }
         else
         {
@@ -225,9 +237,10 @@ public class Grid : MonoBehaviour
 
                 if (Physics.Raycast(rayVar, out hit))
                 {
-                    if (!hit.transform.CompareTag("cena"))
+                    if (!hit.transform.CompareTag("cena") && !hit.transform.CompareTag("Elevador"))
                     {
                         DeletaObj(gameObject);
+                        GameManager.itemSelecionado = false;
                     }
                 }
             }
@@ -248,6 +261,7 @@ public class Grid : MonoBehaviour
                 return;
             else
                 liberaObj = true;
+            jogador.Convert(true);
         }
         if (liberaObj)
         {
@@ -271,11 +285,83 @@ public class Grid : MonoBehaviour
                 GetComponent<Renderer>().material.color = colors[0];
                 colisorCaixa.enabled = true;
             }
+            GameManager.itemSelecionado = false;
         }
     }
 
     public void DeletaObj(GameObject obj)
     {
         Destroy(obj);
+        jogador.Convert(false);
+        GameManager.itemSelecionado = false;
+        //jogador.Convert();
     }
+
+    #region Métodos de Elevadores
+
+    public void DesligaSelecaoElevador()
+    {
+        DesligaSelecao();
+        if (auxCriação)
+        {
+            Serviços.LiberaElevador(posInicial);
+            auxCriação = false;
+        }
+    }
+
+    private void RetiraSelecaoElevador()
+    {
+        if (liberaObj)
+        {
+            /*if (EventSystem.current.currentSelectedGameObject == null)
+            {*/
+
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                RaycastHit hit;
+                Ray rayVar = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(rayVar, out hit))
+                {
+                    if (!hit.transform.CompareTag("Elevador") && !hit.transform.CompareTag("cena"))
+                    {
+                        /*trSelect = null;
+                        canvasMovimento.SetActive(false);
+                        selected = false;*/
+                        DesligaSelecao();
+                    }
+                }
+            }
+            //}
+        }
+        else
+        {
+            if (Input.GetMouseButtonDown(0) && !SobreUI())
+            {
+                RaycastHit hit;
+                Ray rayVar = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(rayVar, out hit))
+                {
+                    if (!hit.transform.CompareTag("Elevador") && !hit.transform.CompareTag("cena"))
+                    {
+                        DeletaObjElevador(gameObject);
+                    }
+                }
+            }
+        }
+
+    }
+
+    
+
+    public void DeletaObjElevador(GameObject obj)
+    {
+        DeletaObj(obj);
+        Serviços.RemoveUltimoDaLista();
+    }
+
+    #endregion
+
 }

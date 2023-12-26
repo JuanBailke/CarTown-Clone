@@ -8,6 +8,7 @@ TagManager:
   - fora
   - Oficina
   - Bloqueio
+  - Elevador
   layers:
   - Default
   - TransparentFX
